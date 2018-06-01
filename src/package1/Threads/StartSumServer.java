@@ -37,7 +37,7 @@ public class StartSumServer extends Thread {
 
 
             sumServer.registerServer(binder);
-            System.out.println(sumServer.getPortNumber());
+
 
         System.out.println("SumServer is Started");
         Socket conn=null;

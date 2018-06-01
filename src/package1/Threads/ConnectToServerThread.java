@@ -19,11 +19,12 @@ public class ConnectToServerThread implements Callable<Object> {
     @Override
     public Object call() throws Exception {
         Object result=null;
-        System.out.println("the serverStub  try to connect the SumServer");
+
         String arr[]=msg.split("#");
         String address=arr[0];
         String parameters=arr[1];
         String addressArray[]=address.split("-");
+        System.out.println("the serverStub  try to connect the "+addressArray[2]+"Server");
 
         Socket soc = new Socket(addressArray[0],Integer.parseInt(addressArray[1]));
 

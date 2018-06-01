@@ -2,12 +2,10 @@ package package1.modules;
 
 
 import package1.rows.BinderRow;
-import package1.rows.ClientStubRow;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClientStub {
@@ -79,7 +77,7 @@ public class ClientStub {
 
     private void cachTheResponse(BinderRow row){
         cashingTable.add(row);
-        System.out.println("new server is  cashed"+ "table size is: "+cashingTable.size());
+        System.out.println("new server is  cashed :::"+ "table size is: "+cashingTable.size());
 
 
 

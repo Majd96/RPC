@@ -64,7 +64,7 @@ public class MainClass {
             MainForm mainForm=new MainForm();
             JFrame jFrame=new JFrame();
             jFrame.setContentPane(mainForm.rootJpanel);
-            jFrame.setSize(600,600);
+            jFrame.setSize(450,450);
             jFrame.setVisible(true);
 
 

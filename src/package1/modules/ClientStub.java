@@ -70,17 +70,16 @@ public class ClientStub {
 
         BinderRow binderRow= new BinderRow(msgs[0],Integer.parseInt(msgs[1]),funName);
          cachTheResponse(new BinderRow(msgs[0],Integer.parseInt(msgs[1]),funName));
-         BinderRow.startTimerForCashing(binderRow,this);
+        System.out.println("new server is  cashed :::"+ "table size is: "+cashingTable.size());
+
          return binderRow;
 
     }
 
-    private void cachTheResponse(BinderRow row){
-        cashingTable.add(row);
-        System.out.println("new server is  cashed :::"+ "table size is: "+cashingTable.size());
+    public void cachTheResponse(BinderRow row){
 
-
-
+            cashingTable.add(row);
+            BinderRow.startTimerForCashing(row,this);
     }
 
     public void deRegisterFunction(BinderRow row) {

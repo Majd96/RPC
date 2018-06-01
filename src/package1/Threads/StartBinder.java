@@ -16,6 +16,7 @@ public class StartBinder extends Thread  {
 
     private Binder binder;
 
+
      public StartBinder(Binder binder){
 
          this.binder=binder;
@@ -25,13 +26,13 @@ public class StartBinder extends Thread  {
     @Override
     public void run() {
         try{
-        ServerSocket server = new ServerSocket(binder.getPortNumber());
+
         Socket conn=null;
         System.out.println("Binder is Started");
 
         ExecutorService service = Executors.newFixedThreadPool(10);
         while (true) {
-            conn = server.accept();
+            conn = binder.getServerSocket().accept();
 
 
             BufferedReader bufr = new BufferedReader(new InputStreamReader(conn.getInputStream()));

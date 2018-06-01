@@ -39,10 +39,11 @@ public class BinderRow {
             public void run() {
 
 
-                    long maxduration = 10000; // 10 seconds.
+                    long maxduration = 9000; // 10 seconds.
                     long endtime = System.currentTimeMillis() + maxduration;
+                    while (System.currentTimeMillis() < endtime);
 
-                    while (System.currentTimeMillis() < endtime) ;
+
                     clientStub.deRegisterFunction(row);
 
 

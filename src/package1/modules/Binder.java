@@ -12,13 +12,14 @@ public class Binder {
     private String binderIp;
     private int portNumber;
     private ServerSocket serverSocket;
-    private Socket clientSocket;
+
     private CopyOnWriteArrayList<BinderRow> binderRowsTable;
 
     public Binder(String binderIp, int portNumber) throws Exception {
         binderRowsTable = new CopyOnWriteArrayList<>();
         this.binderIp = binderIp;
         this.portNumber = portNumber;
+        serverSocket=new ServerSocket(portNumber);
 
 
     }
@@ -61,7 +62,8 @@ public class Binder {
 
     }
 
-    public void ShutDown() {
+    public void ShutDown() throws Exception{
+        serverSocket.close();
 
     }
 
@@ -71,6 +73,10 @@ public class Binder {
 
     public String getBinderIp() {
         return binderIp;
+    }
+
+    public ServerSocket getServerSocket() {
+        return serverSocket;
     }
 }
 

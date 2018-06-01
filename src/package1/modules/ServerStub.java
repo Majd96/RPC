@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -14,11 +15,12 @@ public class ServerStub {
 
     private String ServerStubIP;
     private int portNubmber;
-    private ExecutorService service=Executors.newFixedThreadPool(100);
-
-    public ServerStub(String serverStubIP, int portNubmber) {
+    private ServerSocket serverSocket;
+    public ServerStub(String serverStubIP, int portNubmber) throws Exception{
         this.portNubmber = portNubmber;
         this.ServerStubIP = serverStubIP;
+        serverSocket=new ServerSocket(portNubmber);
+        
     }
 
     public int getPortNubmber() {
@@ -29,8 +31,9 @@ public class ServerStub {
         return ServerStubIP;
     }
 
-
-
+    public ServerSocket getServerSocket() {
+        return serverSocket;
+    }
 }
 
 

@@ -89,6 +89,9 @@ public class MainClass {
                         if (clientStub.ifAlreadyExist(pakage.getFunName()) != null) {
                             binderRow = clientStub.ifAlreadyExist(pakage.getFunName());
                             System.out.println("took from the cashingTable");
+                            clientStub.deRegisterFunction(binderRow);
+                            clientStub.cachTheResponse(binderRow);
+                            System.out.println("start new timer for existing one ");
                         } else {
                             binderRow = clientStub.contactTheBinder(binder, pakage.getFunName());
                             System.out.println("took from the Binder");
@@ -126,6 +129,8 @@ public class MainClass {
                         if (clientStub.ifAlreadyExist(pakage.getFunName()) != null) {
                             binderRow = clientStub.ifAlreadyExist(pakage.getFunName());
                             System.out.println("took from the cashingTable");
+                            clientStub.deRegisterFunction(binderRow);
+                            clientStub.cachTheResponse(binderRow);
                         } else {
                             binderRow = clientStub.contactTheBinder(binder, pakage.getFunName());
                             System.out.println("took from the Binder");

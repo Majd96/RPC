@@ -28,13 +28,13 @@ public class StartServerStup extends Thread {
     @Override
     public void run() {
         try{
-        ServerSocket server = new ServerSocket(serverStub.getPortNubmber());
+
         Socket conn=null;
         ExecutorService service=Executors.newFixedThreadPool(100);
         System.out.println("ServerStub is Started");
 
         while (true) {
-            conn = server.accept();
+            conn = serverStub.getServerSocket().accept();
 
 
             BufferedReader bufr = new BufferedReader(new InputStreamReader(conn.getInputStream()));
